@@ -9,11 +9,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-        with:
-          repository: /jpemberton1-chwy/github-actions-test
-          ref: master
-          token: ${{ secrets.PAT }}
-      - uses: actions/setup-node@v1
+      # - uses: actions/checkout@v1
+      #   with:
+      #     repository: /jpemberton1-chwy/github-actions-test
+      #     ref: master
+      #     token: ${{ secrets.PAT }}
+      # - uses: actions/setup-node@v1
+      - name: Clone the repo
+        run: git clone git@github.com:jpemberton1-chwy/github-actions-test.git
       - name: Check status of the ref
         run: git status
