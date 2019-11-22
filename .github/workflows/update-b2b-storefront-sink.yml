@@ -9,5 +9,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Another thing
+      - uses: actions/checkout@v1
+        with:
+          repository: /jpemberton1-chwy/github-actions-test
+          ref: refs/heads/master
+          token: ${{ secrets.PAT }}
+      - uses: actions/setup-node@v1
+      - name: Check status of the ref
         run: git status
