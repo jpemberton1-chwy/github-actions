@@ -19,3 +19,9 @@ jobs:
         run: git init .
       - name: Checking status
         run: git status
+      - name: Adding something to the end of README
+        run: echo "It was the best of times." >> README.md
+      - name: Switching branches
+        run: git checkout -b automate/update-readme
+      - name: Pushing to the repo
+        run: git push -u
