@@ -15,6 +15,10 @@ jobs:
           ref: master
           token: ${{ secrets.PAT }}
       - uses: actions/setup-node@v1
+      - name: Telling Git who I am
+        run: |
+          git config --global user.email "octokat@octokat.com"
+          git config --global user.name "Octokat"
       - name: Initializing a Git repo
         run: git init .
       - name: Checking status
