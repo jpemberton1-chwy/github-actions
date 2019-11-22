@@ -34,4 +34,4 @@ jobs:
           git add -A
           git commit -a -m "Updating README"
       - name: Pushing to the repo
-        run: git -c http.extraheader="AUTHORIZATION: basic ${{ secrets.PAT }}" push --set-upstream origin automate/update-readme
+        run: git -c http.extraheader="AUTHORIZATION: basic $(secrets.PAT )" push --set-upstream origin automate/update-readme
