@@ -19,9 +19,15 @@ jobs:
         run: git init .
       - name: Checking status
         run: git status
+      - name: Setting remote
+        run: git remote add origin git@github.com:jpemberton1-chwy/github-actions-test.git
       - name: Adding something to the end of README
         run: echo "It was the best of times." >> README.md
       - name: Switching branches
         run: git checkout -b automate/update-readme
+      - name: Committing to the repo
+        run: |
+          git add -A
+          git commit -a -m "Updating README"
       - name: Pushing to the repo
         run: git push -u
